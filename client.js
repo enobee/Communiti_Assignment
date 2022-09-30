@@ -1,4 +1,4 @@
-const socket = io('http://localhost:8000');
+const socket = io('http://localhost:5500');
 
 const body = document.querySelector('.container');
 const chatBox = document.getElementById('chatContainer');
@@ -7,9 +7,9 @@ const messageContainer = document.getElementById('chatting')
 const form = document.getElementById('messageForm');
 const messageInput = document.getElementById('messageInput');
 
-const name = prompt('Enter your name to Join');
+const userName = prompt('Enter your name to Join');
 
-if (name === null || name.length <= 3) {
+if (userName === '') {
     const h1Element = document.createElement('h1');
     h1Element.classList.add('noAccess');
     h1Element.innerText = 'Sorry, You are not Allowed to access the chat 💬👋';
@@ -18,7 +18,7 @@ if (name === null || name.length <= 3) {
     alert('Access Denied');
 } else {
     alert('Access Granted');
-    socket.emit('new-user-joined', name)
+    socket.emit('new-user-joined', userName)
 }
 
 
@@ -62,26 +62,16 @@ socket.on('user-joined', data => {
     onUsers.innerText = data.onUsers
 })
 
-socket.on('receive',data =>{
-    appendMessage(data.message,data.name,'left',data.id)
+socket.on('receive', data => {
+    appendMessage(data.message, data.name, 'left', data.id)
 })
 
-const likedMessage = (id)=>{
-    const likedElement = document.getElementById(id);
-    likedElement.classList.add('liked');
-    socket.emit('liked',id)
-}
 
-socket.on('msg-like',id =>{
-    const likedElement = document.getElementById(id);
-    likedElement.classList.add('liked');
-})
 
-socket.on('disconnected',data =>{
-    appendAction(`${data.name} left the Chat`,'center')
+socket.on('disconnected', data => {
+    appendAction(`${data.name} left the Chat`, 'center')
     onUsers.innerHTML = data.onUsers
 })
-
 
 
 form.addEventListener('submit', (e) => {
@@ -95,5 +85,3 @@ form.addEventListener('submit', (e) => {
     socket.emit('send', { message, id })
     messageInput.value = "";
 })
-
-

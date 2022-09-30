@@ -1,4 +1,7 @@
-const io = require('socket.io')(8000, { cors: { origin: "*" } });
+const io = require('socket.io')(5500, { cors: { origin: "*" } });
+const NodeRSA = require('node-rsa');
+const key = new NodeRSA({ b: 512 });
+
 
 const users = {};
 let onlineUsers = 0;
@@ -13,12 +16,12 @@ io.on('connection', socket => {
     })
 
     socket.on('send', data => {
-        socket.broadcast.emit('receive', { message: data.message, name: users[socket.id], id: data.id })
+        const encrypted = key.encrypt(data.message, 'base64');
+        const decrypted = key.decrypt(encrypted, 'utf8');
+        socket.broadcast.emit('receive', { message: decrypted, name: users[socket.id], id: data.id })
     })
 
-    socket.on('liked', id => {
-        socket.broadcast.emit('msg-like', id)
-    })
+
 
     socket.on('disconnect', () => {
         onlineUsers = onlineUsers - 1;

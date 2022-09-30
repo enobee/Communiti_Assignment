@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -15,7 +15,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(to right, #021B79, #0575E6);
+    background: linear-gradient(to right, #79025d, #c055be);
 }
 
 .chatContainer {
@@ -32,14 +32,14 @@ body {
     flex-direction: column;
 }
 
-.chatHead{
+.chatHead {
     width: 100%;
     display: flex;
-    background-color: #0080ff;
+    background-color: #ff00c8;
     align-items: center;
 }
 
-.chatHead p{
+.chatHead p {
     margin: 10px auto;
     text-align: center;
     font-family: 'Poppins';
@@ -48,25 +48,25 @@ body {
 }
 
 
-.usersCount{
+.usersCount {
     color: white;
     align-items: center;
     position: absolute;
     right: 10px;
 }
 
-.usersCount span{
+.usersCount span {
     font-family: 'Poppins';
     letter-spacing: 2px;
     margin-left: 4px;
 }
 
-.usersCount i{
+.usersCount i {
     font-size: 14px;
 }
 
 
-#messageForm{
+#messageForm {
     display: flex;
     max-width: 545px;
     position: absolute;
@@ -76,25 +76,25 @@ body {
     width: 100%;
 }
 
-#messageForm input{
+#messageForm input {
     width: 100%;
     outline: none;
     border: none;
     padding: 8px 60px 8px 10px;
     font-weight: 500;
     font-family: 'Poppins';
-    border: 1px solid #0575E6;
+    border: 1px solid #ff00c8;
     color: rgb(16, 16, 16);
 }
 
-#sendBtn{
+#sendBtn {
     outline: none;
     border: none;
     position: absolute;
     top: 50%;
     right: 0px;
     transform: translateY(-50%);
-    background-color: #0575E6;
+    background-color: #ff00c8;
     color: white;
     padding: 8px 12px;
     cursor: pointer;
@@ -103,12 +103,12 @@ body {
     font-weight: 500;
 }
 
-#sendBtn:hover{
+#sendBtn:hover {
     background-color: #0080ff;
 }
 
 
-.chattings{
+.chattings {
     display: flex;
     flex-direction: column;
     padding: 10px 10px;
@@ -117,22 +117,22 @@ body {
 }
 
 
-.chattings::-webkit-scrollbar{
+.chattings::-webkit-scrollbar {
     width: 6px;
 }
 
 
-.chattings::-webkit-scrollbar-thumb{
+.chattings::-webkit-scrollbar-thumb {
     width: 6px;
     border-radius: 4px;
-    background-color: #0080ff;
+    background-color: #00fbff;
 }
 
 
-.message{
+.message {
     font-family: 'Poppins';
     color: white;
-    background-color: #0080ff;
+    background-color: #c769d6;
     max-width: 35%;
     display: flex;
     position: relative;
@@ -143,18 +143,18 @@ body {
 
 }
 
-.message span{
+.message span {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.637);
 }
 
-.message p{
+.message p {
     margin: 0;
     margin-top: 2px;
     font-size: 1rem;
 }
 
-.message i{
+.message i {
     position: absolute;
     bottom: -5px;
     color: rgb(195, 1, 1);
@@ -162,7 +162,7 @@ body {
     display: none;
 }
 
-.center{
+.center {
     align-self: center;
     border-radius: 8px;
     background-color: #0576e685;
@@ -170,27 +170,27 @@ body {
     text-align: center;
 }
 
-.message.center p{
+.message.center p {
     font-size: 12px;
 }
 
-.message.liked i{
+.message.liked i {
     display: flex;
 }
 
-.right{
+.right {
     border-radius: 16px;
     border-bottom-right-radius: 0;
     align-self: flex-end;
 }
 
-.left{
+.left {
     border-radius: 16px;
     border-bottom-left-radius: 0;
     align-self: flex-start;
 }
 
-.noAccess{
+.noAccess {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -204,8 +204,8 @@ body {
     padding: 0 20px;
 }
 
- /* Only Add When Needed */
-.serverFull{
+/* Only Add When Needed */
+.serverFull {
     position: absolute;
     bottom: 0;
     color: #0080ff;
@@ -216,7 +216,7 @@ body {
     width: 100%;
 }
 
-.serverFull.active{
+.serverFull.active {
     display: flex;
     justify-content: center;
 }

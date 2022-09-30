@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,15 @@
     <title>Chat App</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="https://kit.fontawesome.com/42eae9eadc.js" crossorigin="anonymous"></script>
-    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="http://localhost:5500/socket.io/socket.io.js"></script>
     <script defer src="./client.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="chatContainer" id="chatContainer">
             <div class="chatHead">
-                <p>Programmer's Group</p>
+                <p>Communiti ChatRoom</p>
                 <div class="usersCount">
                     <i class="fa-solid fa-user"></i>
                     <span id="onUsers">0</span>
@@ -29,4 +31,5 @@
         </div>
     </div>
 </body>
+
 </html>
